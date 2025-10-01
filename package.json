@@ -1,0 +1,22 @@
+{
+  "name": "tharak-koneni-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Tharak Koneni - Computer Science Graduate Student",
+  "scripts": {
+    "dev": "cd frontend && yarn start",
+    "build": "cd frontend && yarn build",
+    "install-deps": "cd frontend && yarn install",
+    "start": "cd frontend && yarn start"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "tailwind",
+    "computer-science",
+    "machine-learning",
+    "ai"
+  ],
+  "author": "Tharak Koneni",
+  "license": "MIT",
+  "homepage": "."
+}
