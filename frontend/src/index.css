@@ -12,10 +12,7 @@ body {
 }
 
 /* Hide any Emergent branding that might be injected */
-#emergent-badge, 
-[id*="emergent"], 
-[class*="emergent"],
-a[href*="emergent.sh"] {
+ {
     display: none !important;
     visibility: hidden !important;
 }
