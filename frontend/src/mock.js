@@ -8,7 +8,7 @@ export const portfolioData = {
     phone: "(813)-534-2315",
     github: "https://github.com/tah-rak",
     linkedin: "https://www.linkedin.com/in/tharak-k",
-    photo: "https://avatars.githubusercontent.com/u/yourusername?v=4",
+    photo: "https://lh3.googleusercontent.com/d/1N9ylaOezIF4TCdksx0y7fV-OPI2fWMR3",
     bio: "Passionate Computer Science graduate student specializing in Machine Learning, AI, and Data Science. Experienced in building production-grade systems and conducting cutting-edge research in NLP and predictive modeling."
   },
   
