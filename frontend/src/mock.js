@@ -138,7 +138,7 @@ export const portfolioData = {
         "Achieved 87% accuracy and 85% F1-score",
         "Implemented reproducible training/eval pipelines with PyTorch Lightning"
       ],
-      github: "https://github.com/tah-rak/suicidal-ideation-detection", // Mock link
+      github: "https://github.com/tah-rak/Suicidal-ideation-detection", 
       demo: null
     }
   ],
