@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Github, Linkedin } from 'lucide-react';
 import { portfolioData } from '../mock';
 import { useToast } from '../hooks/use-toast';
-import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const { toast } = useToast();
