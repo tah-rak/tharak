@@ -124,7 +124,7 @@ export const portfolioData = {
         "Engineered a retrieval framework integrating vector database search and adaptive reranking (40% improvement in LLM retrieval precision, reduced hallucinations)",
         "Deployed and tested semantic-search workflows using Pinecone/FAISS with a Flask backend"
       ],
-      github: "https://github.com/tah-rak/knowledge-conflict-resolution", // Mock link
+      github: "https://github.com/tah-rak/rag-bot",
       demo: null
     },
     {
