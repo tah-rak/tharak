@@ -11,8 +11,8 @@ const Hero = () => {
   };
 
   const downloadResume = () => {
-    // Link to resume PDF
-    const resumeUrl = "https://customer-assets.emergentagent.com/job_b28031a3-bbc4-481b-aeb0-62ec4c49d3de/artifacts/eay3t1pc_Tharak%20Koneni_Resume.pdf";
+    // Link to resume PDF on Google Drive
+    const resumeUrl = "YOUR_GOOGLE_DRIVE_LINK_HERE";
     window.open(resumeUrl, '_blank');
   };
 
