@@ -7,7 +7,7 @@ export const portfolioData = {
     email: "tharak.env@gmail.com",
     phone: "(813)-534-2315",
     github: "https://github.com/tah-rak",
-    linkedin: "https://linkedin.com/in/tharak-koneni", // Please update this with your actual LinkedIn URL
+    linkedin: "https://www.linkedin.com/in/tharak-k",
     photo: "https://customer-assets.emergentagent.com/job_dev-resume-57/artifacts/461jjsv2_ktharak%40usf.edu-f9296ae5.jpg",
     bio: "Passionate Computer Science graduate student specializing in Machine Learning, AI, and Data Science. Experienced in building production-grade systems and conducting cutting-edge research in NLP and predictive modeling."
   },
