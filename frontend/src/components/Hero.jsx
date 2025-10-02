@@ -12,7 +12,7 @@ const Hero = () => {
 
   const downloadResume = () => {
     // Link to resume PDF
-    const resumeUrl = "https://drive.google.com/file/d/1wd3AkAQ1AAa1hOzER7mZHOS-lhhBJkGF/view?usp=drive_link";
+    const resumeUrl = "https://drive.google.com/file/d/1AFGCBN7U90RWBQFe62A7uYsTOMACKR0I/view?usp=sharing";
     window.open(resumeUrl, '_blank');
   };
 
