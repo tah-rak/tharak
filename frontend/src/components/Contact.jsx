@@ -21,53 +21,54 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      // Send form data to Formspree
-      const response = await fetch('https://formspree.io/f/mkgqbjkq', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email, // This helps with replies
-        }),
-      });
-
-      if (response.ok) {
-        // Show success message
-        toast({
-          title: "Message sent successfully!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
-        });
-
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Form submission failed:', error);
+    // Validate form fields
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
-        title: "Error sending message",
-        description: "Something went wrong. Please try again or email me directly at tharak.env@gmail.com",
+        title: "Please fill all fields",
+        description: "All fields are required to send your message.",
         variant: "destructive"
       });
-    } finally {
-      setIsSubmitting(false);
+      return;
     }
+
+    // Create email content
+    const emailSubject = `Portfolio Contact: ${formData.subject}`;
+    const emailBody = `Hi Tharak,
+
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+Sent from your portfolio contact form`;
+
+    // Create mailto link
+    const mailtoLink = `mailto:tharak.env@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    toast({
+      title: "Opening email client...",
+      description: "Your email client should open with the message pre-filled.",
+    });
+
+    // Reset form after a short delay
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    }, 1000);
   };
 
   return (
