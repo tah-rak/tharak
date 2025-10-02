@@ -12,7 +12,7 @@ const Hero = () => {
 
   const downloadResume = () => {
     // Link to resume PDF on Google Drive
-    const resumeUrl = "YOUR_GOOGLE_DRIVE_LINK_HERE";
+    const resumeUrl = "https://drive.google.com/file/d/1N9ylaOezIF4TCdksx0y7fV-OPI2fWMR3/view"; // Update with your actual resume link
     window.open(resumeUrl, '_blank');
   };
 
