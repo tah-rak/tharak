@@ -27,45 +27,44 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration from environment variables
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;  
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
-      
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        serviceId,
-        templateId,
-        {
+      // Send form data to Cloudflare Pages Function
+      const response = await fetch('/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'tharak.env@gmail.com', // Your email
-        },
-        publicKey
-      );
-
-      console.log('Email sent successfully:', result.text);
-      
-      // Show success message
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        }),
       });
 
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      const result = await response.json();
+
+      if (result.success) {
+        // Show success message
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.error);
+      }
     } catch (error) {
-      console.error('Email send failed:', error);
+      console.error('Form submission failed:', error);
       toast({
         title: "Error sending message",
-        description: "Something went wrong. Please try again or email me directly.",
+        description: "Something went wrong. Please try again or email me directly at tharak.env@gmail.com",
         variant: "destructive"
       });
     } finally {
