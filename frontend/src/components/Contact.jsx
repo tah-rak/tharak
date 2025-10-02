@@ -27,8 +27,26 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Mock form submission - in production, this would send to your backend
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // EmailJS configuration - YOU NEED TO UPDATE THESE VALUES
+      const serviceId = 'YOUR_SERVICE_ID';  // Replace with your EmailJS service ID
+      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID  
+      const publicKey = 'YOUR_PUBLIC_KEY';   // Replace with your EmailJS public key
+      
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'tharak.env@gmail.com', // Your email
+        },
+        publicKey
+      );
+
+      console.log('Email sent successfully:', result.text);
       
       // Show success message
       toast({
@@ -44,9 +62,10 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
+      console.error('Email send failed:', error);
       toast({
         title: "Error sending message",
-        description: "Something went wrong. Please try again.",
+        description: "Something went wrong. Please try again or email me directly.",
         variant: "destructive"
       });
     } finally {
