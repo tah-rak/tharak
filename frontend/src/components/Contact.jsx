@@ -11,7 +11,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // Form submission handled via mailto link
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
