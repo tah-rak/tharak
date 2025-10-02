@@ -11,6 +11,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide any Emergent branding that might be injected */
+#emergent-badge, 
+[id*="emergent"], 
+[class*="emergent"],
+a[href*="emergent.sh"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
