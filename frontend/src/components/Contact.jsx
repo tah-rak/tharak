@@ -27,10 +27,10 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration - YOU NEED TO UPDATE THESE VALUES
-      const serviceId = 'YOUR_SERVICE_ID';  // Replace with your EmailJS service ID
-      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID  
-      const publicKey = 'YOUR_PUBLIC_KEY';   // Replace with your EmailJS public key
+      // EmailJS configuration from environment variables
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;  
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
       
       // Send email using EmailJS
       const result = await emailjs.send(
