@@ -7,7 +7,7 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const currentYear = new Date().getFullYear();
+  // Removed currentYear as it's no longer needed
 
   return (
     <footer className="bg-gray-900 text-white">
