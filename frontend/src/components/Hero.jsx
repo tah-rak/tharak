@@ -12,7 +12,7 @@ const Hero = () => {
 
   const downloadResume = () => {
     // Link to resume PDF
-    const resumeUrl = "https://customer-assets.emergentagent.com/job_b28031a3-bbc4-481b-aeb0-62ec4c49d3de/artifacts/eay3t1pc_Tharak%20Koneni_Resume.pdf";
+    const resumeUrl = "https://drive.google.com/file/d/1wd3AkAQ1AAa1hOzER7mZHOS-lhhBJkGF/view?usp=drive_link";
     window.open(resumeUrl, '_blank');
   };
 
