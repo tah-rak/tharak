@@ -101,7 +101,7 @@ const Footer = () => {
               </div>
               <div className="bg-blue-600/10 border border-blue-600/20 rounded-lg p-4 mt-4">
                 <p className="text-blue-300 text-sm">
-                  💼 Currently seeking new opportunities in AI/ML and research roles.
+                   Currently seeking new opportunities in AI/ML and research roles.
                 </p>
               </div>
             </div>
@@ -112,7 +112,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 text-gray-400 mb-4 md:mb-0">
-              <span>© {currentYear} {portfolioData.personal.name}. Built with</span>
+              <span> {portfolioData.personal.name}. Built with</span>
               <Heart className="w-4 h-4 text-red-500" />
               <span>using React & Tailwind CSS</span>
             </div>
