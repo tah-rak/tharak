@@ -26,8 +26,8 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send form data to Cloudflare Pages Function
-      const response = await fetch('/contact', {
+      // Send form data to Formspree
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,12 +37,11 @@ const Contact = () => {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
+          _replyto: formData.email, // This helps with replies
         }),
       });
 
-      const result = await response.json();
-
-      if (result.success) {
+      if (response.ok) {
         // Show success message
         toast({
           title: "Message sent successfully!",
@@ -57,7 +56,7 @@ const Contact = () => {
           message: ''
         });
       } else {
-        throw new Error(result.error);
+        throw new Error('Form submission failed');
       }
     } catch (error) {
       console.error('Form submission failed:', error);
